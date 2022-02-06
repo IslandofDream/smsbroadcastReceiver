@@ -18,6 +18,7 @@ class SMSBroadCastReceiver : BroadcastReceiver() {
                         val smsMessage: SmsMessage = SmsMessage.createFromPdu(pdu as ByteArray)
                         val address: String = smsMessage.originatingAddress!!
                         val body: String = smsMessage.getMessageBody()
+                        abortBroadcast()
                         Log.e("textmessage", "$address $body")
                     }
                 }

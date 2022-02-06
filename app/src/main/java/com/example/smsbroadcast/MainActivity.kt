@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val filter = IntentFilter().apply {
+            priority= 999
             addAction(SMS_RECEIVED_ACTION)
         }
         this.registerReceiver(smsReceiver, filter)
